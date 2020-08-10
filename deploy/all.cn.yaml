@@ -48,7 +48,7 @@ metadata:
 spec:
   serviceName: piraeus-etcd
   podManagementPolicy: Parallel
-  replicas: 3
+  replicas: 1
   updateStrategy:
     type: RollingUpdate
   selector:
@@ -66,7 +66,7 @@ spec:
       dnsPolicy: ClusterFirst
       initContainers:
       - name: init
-        image: daocloud.io/piraeus/piraeus-init:v0.5.6
+        image: daocloud.io/piraeus/piraeus-init:v0.5.7
         imagePullPolicy: Always
         resources:
           limits:
@@ -74,7 +74,7 @@ spec:
             memory: 100Mi
         env:
         - name: CLUSTER_SIZE
-          value: "3"
+          value: "1"
         - name: PEER_PORT
           value: "2380"
         - name: CLIENT_PORT
@@ -228,7 +228,7 @@ spec:
       dnsPolicy: ClusterFirst
       initContainers:
       - name: init
-        image: daocloud.io/piraeus/piraeus-init:v0.5.6
+        image: daocloud.io/piraeus/piraeus-init:v0.5.7
         imagePullPolicy: IfNotPresent
         resources:
           limits:
@@ -315,7 +315,7 @@ data:
   LS_CONTROLLERS: piraeus-controller.piraeus-system.svc.cluster.local:3370
   POOL_BASE_DIR: /var/lib/piraeus/storagepools
   DRBD_IMG_REPO: daocloud.io/piraeus
-  DRBD_IMG_TAG: v9.0.22
+  DRBD_IMG_TAG: v9.0.24
   DRBD_IMG_PULL_POLICY: IfNotPresent
   MAP_HOST_LVM: "true"
 ---
@@ -347,7 +347,7 @@ spec:
       dnsPolicy: ClusterFirstWithHostNet
       initContainers:
       - name: init
-        image: daocloud.io/piraeus/piraeus-init:v0.5.6
+        image: daocloud.io/piraeus/piraeus-init:v0.5.7
         imagePullPolicy: IfNotPresent
         securityContext:
           privileged: true
@@ -546,7 +546,7 @@ spec:
       dnsPolicy: ClusterFirstWithHostNet
       initContainers:
       - name: init
-        image: daocloud.io/piraeus/piraeus-init:v0.5.6
+        image: daocloud.io/piraeus/piraeus-init:v0.5.7
         imagePullPolicy: IfNotPresent
         resources:
           limits:

@@ -6,5 +6,5 @@ if [ -d "$data_dir" ] && [ "$( ls -A "$data_dir" )" ]; then
     cp -vfr "$data_dir" "${data_dir}_${mod_time}"
 fi
 
-etcdctl get --prefix "LINSTOR/" -w simple > "${data_dir}_${mod_time}/keys.txt"
-etcdctl get --prefix "LINSTOR/" -w json > "${data_dir}_${mod_time}/keys.json"
+etcdctl get --prefix "" -w simple > "${data_dir}_${mod_time}/keys.txt"
+etcdctl get --prefix "" -w json > "${data_dir}_${mod_time}/keys.json"

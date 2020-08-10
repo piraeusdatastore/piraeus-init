@@ -1,12 +1,12 @@
-FROM python:3-alpine
+FROM debian:buster
 MAINTAINER Alex Zheng <alex.zheng@daocloud.io>
 
 # ENV LINSTOR_API_PY_VER 1.0.11
 
 RUN set -x && \
-    apk update && \
-    apk add bash jq curl libcurl kmod && \
-    rm -f /var/cache/apk/* 
+    apt-get update && \
+    apt-get install -y jq curl kmod && \
+    apt-get clean
 
 # RUN set -x && \
 #     pip install kubernetes nsenter docker-py python-etcd && \

@@ -37,7 +37,7 @@ metadata:
 spec:
   serviceName: #@ etcd()
   podManagementPolicy: Parallel
-  replicas: 3
+  replicas: 1
   updateStrategy:
     type: RollingUpdate
   selector:
@@ -69,7 +69,7 @@ spec:
             memory: 100Mi
         env:
         - name: CLUSTER_SIZE
-          value: '3'
+          value: '1'
         - name: PEER_PORT
           value: '2380'
         - name: CLIENT_PORT

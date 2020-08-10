@@ -8,7 +8,7 @@ data:
   LS_CONTROLLERS: piraeus-controller.piraeus-system.svc.cluster.local:3370
   POOL_BASE_DIR: /var/lib/piraeus/storagepools
   DRBD_IMG_REPO: quay.io/piraeusdatastore
-  DRBD_IMG_TAG: v9.0.22
+  DRBD_IMG_TAG: v9.0.24
   DRBD_IMG_PULL_POLICY: IfNotPresent
   MAP_HOST_LVM: "true"
 ---
@@ -40,7 +40,7 @@ spec:
       dnsPolicy: ClusterFirstWithHostNet
       initContainers:
       - name: init
-        image: quay.io/piraeusdatastore/piraeus-init:v0.5.6
+        image: quay.io/piraeusdatastore/piraeus-init:v0.5.7
         imagePullPolicy: IfNotPresent
         securityContext:
           privileged: true
